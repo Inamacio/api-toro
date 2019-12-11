@@ -1,0 +1,139 @@
+swagger: "2.0"
+info:
+  description: "`API-TORO` "
+  version: "1.0.0"
+  title: "Swagger Test toro"
+  termsOfService: "http://swagger.io/terms/"
+  contact:
+    email: "apiteam@swagger.io"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "localhost:3000"
+basePath: "/v1"
+tags:
+- name: "client"
+  description: "Everything about your clients"
+  externalDocs:
+    description: "Find out more"
+    url: "http://swagger.io"
+schemes:
+- "https"
+- "http"
+paths:
+  /v1/client/balance:
+    put:
+      tags:
+      - "client"
+      summary: "Update balance client"
+      description: ""
+      operationId: "addPet"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Pet object that needs to be added to the store"
+        required: true
+        schema:
+          $ref: "#/definitions/Balance"
+      responses:
+        405:
+          description: "Invalid input"
+  /v1/client/shares:      
+    put:
+      tags:
+      - "client"
+      summary: "Update shares"
+      description: ""
+      operationId: "updatePet"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Pet object that needs to be added to the store"
+        required: true
+        schema:
+          $ref: "#/definitions/Shares"
+      responses:
+        400:
+          description: "Invalid ID supplied"
+        404:
+          description: "Pet not found"
+        405:
+          description: "Validation exception"
+  /v1/client/:
+    get:
+      tags:
+      - "client"
+      summary: "Finds Pets by status"
+      description: "Multiple status values can be provided with comma separated strings"
+      operationId: "findPetsByStatus"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Client"
+        400:
+          description: "Invalid status value"
+definitions:
+  Balance:
+    type: "object"
+    properties:
+      balance:
+        type: "integer"
+        format: "int64"
+    xml:
+      name: "Balance" 
+  Shares:
+    type: "object"
+    properties:
+      type:
+        type: "string"
+      name:
+        type: "string"
+      value:
+        type: "integer"
+        format: "int64"  
+    xml:
+      name: "Shares"
+  Stocks:
+    type: "object"
+    properties:
+      name:
+        type: "string"
+      value:
+        type: "string"
+    xml:
+      name: "Stocks"      
+  Client:
+    type: "object"
+    properties:
+      name:
+        type: "string"
+      email:
+        type: "string"
+      balance:
+        type: "integer"
+        format: "int64"
+      stocks:
+        type: array
+        items:
+          items:
+            $ref: "#/definitions/Stocks"
+    xml:
+      name: "Client"    
+externalDocs:
+  description: "Find out more about Swagger"
+  url: "http://swagger.io"

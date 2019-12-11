@@ -1,0 +1,21 @@
+{
+  "client": {
+    "name": "Flávio dos Santos",
+    "email": "test@toro",
+    "balance": 800,
+    "stocks": [
+      {
+        "name": "GOL40",
+        "value": "40"
+      },
+      {
+        "name": "XAM90",
+        "value": "30"
+      },
+      {
+        "name": "TORO6",
+        "value": "10"
+      }
+    ]
+  }
+}

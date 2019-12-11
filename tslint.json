@@ -1,0 +1,39 @@
+{
+  "extends": [
+    "tslint-config-airbnb"
+  ],
+  "linterOptions": {
+    "exclude": [
+      ".vscode/",
+      "node_modules/",
+      "hooks/"
+    ]
+  },
+  "rules": {
+    "array-type": [
+      true,
+      "generic"
+    ],
+    "align": false,
+    "no-string-literal": false,
+    "prefer-array-literal": false,
+    "object-literal-shorthand": [
+      true,
+      "never"
+    ],
+    "only-arrow-functions": false,
+    "interface-name": false,
+    "max-classes-per-file": false,
+    "no-var-requires": false,
+    "ban-types": false,
+    "no-unused-expression": true,
+    "semicolon": [
+      true,
+      "always"
+    ],
+
+    "jsdoc-format": [true, "check-multiline-start"],
+    "max-file-line-count": [true, 300],
+    "completed-docs": [true]
+  }
+}
