@@ -5,7 +5,6 @@
   "main": "dist/index.ts",
   "types": "dist/index.d.ts",
   "scripts": {
-    "depcheck": "depcheck --ignores=redis,@types/*,@istanbuljs/nyc-config-typescript,tslint-config-prettier",
     "prebuild": "rm -rf ./dist",
     "build": "tsc",
     "start": "node ./dist/src/main.js",
