@@ -21,5 +21,5 @@ or
 $ npm run mocha
 ```
 
-Endpoints estão mapeados em `doc/swagger`
+Endpoint Documentation `doc/swagger`
 
